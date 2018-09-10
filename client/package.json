@@ -1,12 +1,23 @@
 {
-  "name": "client",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pwa export --routes /about,/blog,/",
+    "start": "sirv build -s",
+    "watch": "pwa watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "ganalytics": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-loadable": "latest",
+    "react-router-dom": "latest",
+    "sirv-cli": "latest"
+  },
+  "devDependencies": {
+    "@pwa/cli": "latest",
+    "@pwa/plugin-sw-workbox": "latest",
+    "@pwa/preset-react": "latest",
+    "node-sass": "latest",
+    "sass-loader": "latest"
+  }
 }
