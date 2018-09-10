@@ -1,9 +1,9 @@
-import React from "react";
-import Code from "@components/Code";
-import { HMR } from "@pwa/preset-react";
-import Window from "@components/Window";
-import Feats from "@components/Feats";
-import style from "./index.sass";
+import React from 'react';
+import Code from '@components/Code';
+import { HMR } from '@pwa/preset-react';
+import Window from '@components/Window';
+import Feats from '@components/Feats';
+import style from './index.sass';
 
 function Home() {
   return (

@@ -1,20 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import style from "./index.sass";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import style from './index.sass';
 
 export default class Nav extends React.Component {
   state = {
-    stuck: false
+    stuck: false,
   };
 
   componentDidMount() {
     addEventListener(
-      "scroll",
+      'scroll',
       ev => {
         let stuck = window.pageYOffset > 0;
         this.setState({ stuck });
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -45,18 +45,12 @@ export default class Nav extends React.Component {
 
         <ul>
           <li>
-            <a
-              href="https://github.com/lukeed/pwa"
-              className={style.link_external}
-            >
+            <a href="https://github.com/lukeed/pwa" className={style.link_external}>
               GitHub
             </a>
           </li>
           <li>
-            <a
-              href="https://github.com/lukeed/pwa"
-              className={style.link_external}
-            >
+            <a href="https://github.com/lukeed/pwa" className={style.link_external}>
               Documentation
             </a>
           </li>

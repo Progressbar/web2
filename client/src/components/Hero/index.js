@@ -1,8 +1,8 @@
-import React from "react";
-import Nav from "@components/Nav";
-import style from "./index.sass";
+import React from 'react';
+import Nav from '@components/Nav';
+import style from './index.sass';
 
-const SHAPES = ["point", "square", "penta", "circle", "cross"];
+const SHAPES = ['point', 'square', 'penta', 'circle', 'cross'];
 
 export default class Hero extends React.Component {
   setShapes = elem => {
@@ -24,9 +24,8 @@ export default class Hero extends React.Component {
       let sine = Math.random() * 60;
       let x = ww * Math.random();
 
-      let item = document.createElement("span");
-      item.className =
-        style.shape + " " + SHAPES[(SHAPES.length * Math.random()) | 0];
+      let item = document.createElement('span');
+      item.className = style.shape + ' ' + SHAPES[(SHAPES.length * Math.random()) | 0];
       item.style.transform = `translate3d(${x}px,${y}px,0) scale(${scale})`;
       elem.appendChild(item);
 

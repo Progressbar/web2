@@ -1,5 +1,5 @@
-import React from "react";
-import style from "./index.sass";
+import React from 'react';
+import style from './index.sass';
 
 export default function(props) {
   let cls = style.pre;

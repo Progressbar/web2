@@ -1,6 +1,6 @@
-import React from "react";
-import items from "@assets/features.json";
-import style from "./index.sass";
+import React from 'react';
+import items from '@assets/features.json';
+import style from './index.sass';
 
 function Item(props) {
   return (

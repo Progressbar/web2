@@ -1,6 +1,6 @@
-import React from "react";
-import VIDEO from "@assets/video.svg";
-import style from "./index.sass";
+import React from 'react';
+import VIDEO from '@assets/video.svg';
+import style from './index.sass';
 
 export default function(props) {
   return (
