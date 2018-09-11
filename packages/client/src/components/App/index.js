@@ -5,7 +5,7 @@ import { Route, withRouter } from 'react-router-dom';
 import Footer from '@components/Footer';
 import Hero from '@components/Hero';
 import style from './index.sass';
-import { UserContext } from '@store/User';
+import { userStore } from '@stores/User';
 
 // Route-Split Components
 const loading = () => <div>Loading...</div>;
@@ -18,8 +18,10 @@ const Blog = load(() => import('@pages/Blog'));
 const Login = load(() => import('@pages/Login'));
 const Donate = load(() => import('@pages/Donate'));
 const Events = load(() => import('@pages/Events'));
-// const Presskit = load(() => import('@pages/Presskit'));
-// const Cowork = load(() => import('@pages/Cowork'));
+const Presskit = load(() => import('@pages/Presskit'));
+const Cowork = load(() => import('@pages/Cowork'));
+const Order = load(() => import('@pages/Order'));
+const Purchase = load(() => import('@pages/Purchase'));
 const Me = load(() => import('@pages/Me'));
 const Contact = load(() => import('@pages/Contact'));
 const Register = load(() => import('@pages/Register'));
@@ -28,8 +30,8 @@ class App extends React.Component {
   componentDidMount() {
     if (process.env.NODE_ENV === 'production') {
       // this.props.history.listen(obj => {
-      // 	if (window.ga) ga.send('pageview', { dp:obj.pathname });
-      // });
+      // 	if (window.ga) ga.send('pageview', { dp:obj.pathname })
+      // })
     }
   }
 

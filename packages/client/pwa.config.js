@@ -5,6 +5,6 @@ exports.webpack = function(config, env) {
 
   config.resolve.alias = {
     ...config.resolve.alias,
-    '@store': join(env.src, 'store'),
+    '@stores': join(env.src, 'stores'),
   };
 };
