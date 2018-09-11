@@ -1,8 +1,10 @@
 {
+  "name": "web2",
   "private": true,
-  "version": "0.0.2",
+  "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm i packages/*"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,12 @@
   "devDependencies": {
     "eslint": "~5.5.0",
     "eslint-plugin-prettier": "~2.6.2",
-    "lerna": "~3.3.0",
     "prettier": "~1.14.2"
+  },
+  "dependencies": {
+    "client": "file:packages/client",
+    "common": "file:packages/common",
+    "rpi": "file:packages/rpi",
+    "serverless": "file:packages/serverless"
   }
 }
