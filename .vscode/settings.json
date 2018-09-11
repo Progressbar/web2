@@ -1,13 +1,7 @@
 {
-    "editor.formatOnSave": true,
-    "javascript.format.enable": false,
-    "prettier.eslintIntegration": true,
-    "prettier.requireConfig": true,
-    "javascript.validate.enable": false,
-    "flow.enabled": true,
-    "flow.useNPMPackagedFlow": true,
-    "eslint.enable": true
-    // "files.associations": {
-    //   "*.js": "javascriptreact"
-    // }
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.requireConfig": true,
+  "flow.enabled": false,
+  "eslint.enable": true
 }

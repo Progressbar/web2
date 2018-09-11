@@ -7,8 +7,7 @@
     "start": "sirv build -s",
     "watch": "pwa watch",
     "lint": "npx eslint --ext .js src/",
-    "flow": "npx flow",
-    "flow-watch": "npx flow-watch"
+    "test": "npx jest"
   },
   "dependencies": {
     "ganalytics": "^3.0.0",
