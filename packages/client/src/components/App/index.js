@@ -16,6 +16,13 @@ const About = load(() => import('@pages/About'));
 const Article = load(() => import('@pages/Article'));
 const Blog = load(() => import('@pages/Blog'));
 const Login = load(() => import('@pages/Login'));
+const Donate = load(() => import('@pages/Donate'));
+const Events = load(() => import('@pages/Events'));
+const Presskit = load(() => import('@pages/Presskit'));
+const Cowork = load(() => import('@pages/Cowork'));
+const Me = load(() => import('@pages/Me'));
+const Contact = load(() => import('@pages/Contact'));
+const Register = load(() => import('@pages/Register'));
 
 class App extends React.Component {
   componentDidMount() {
@@ -37,6 +44,15 @@ class App extends React.Component {
             <Route path="/blog/:title" component={Article} />
             <Route path="/about" exact component={About} />
             <Route path="/login" exact component={Login} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/order" exact component={Order} />
+            <Route path="/presskit" exact component={Presskit} />
+            <Route path="/purchase" exact component={Purchase} />
+            <Route path="/me" exact component={Me} />
+            <Route path="/events" exact component={Events} />
+            <Route path="/donate" exact component={Donate} />
+            <Route path="/cowork" exact component={Cowork} />
+            <Route path="/contact" exact component={Contact} />
           </main>
           <Footer />
         </UserContext.Provider>
