@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "install": "npm i packages/*",
-    "test": "npx jest"
+    "postinstall": "npm i packages/*",
+    "test": "npx jest",
+    "watch-client": "cd packages/client; npm run watch"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,6 @@
   },
   "homepage": "https://github.com/Progressbar/web2#readme",
   "devDependencies": {
-    "eslint": "~5.5.0",
-    "eslint-config-prettier": "~3.0.1",
-    "eslint-config-react": "~1.1.7",
-    "eslint-plugin-prettier": "~2.6.2",
-    "eslint-plugin-react": "~7.11.1",
     "jest": "~23.6.0",
     "prettier": "1.14.2"
   },

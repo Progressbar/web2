@@ -18,8 +18,8 @@
     "sirv-cli": "~0.2.1"
   },
   "devDependencies": {
-    "@pwa/cli": "~0.2.0",
-    "@pwa/plugin-sw-workbox": "~0.2.0",
+    "@pwa/cli": "~0.3.0",
+    "@pwa/plugin-sw-workbox": "~0.3.0",
     "@pwa/preset-react": "~0.1.0",
     "node-sass": "~4.9.3",
     "sass-loader": "~7.1.0"
