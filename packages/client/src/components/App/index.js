@@ -19,7 +19,7 @@ const Login = load(() => import('@pages/Login'));
 const Donate = load(() => import('@pages/Donate'));
 const Events = load(() => import('@pages/Events'));
 // const Presskit = load(() => import('@pages/Presskit'));
-const Cowork = load(() => import('@pages/Cowork'));
+// const Cowork = load(() => import('@pages/Cowork'));
 const Me = load(() => import('@pages/Me'));
 const Contact = load(() => import('@pages/Contact'));
 const Register = load(() => import('@pages/Register'));

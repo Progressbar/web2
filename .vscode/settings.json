@@ -5,7 +5,8 @@
     "prettier.requireConfig": true,
     "javascript.validate.enable": false,
     "flow.enabled": true,
-    "flow.useNPMPackagedFlow": true
+    "flow.useNPMPackagedFlow": true,
+    "eslint.enable": true
     // "files.associations": {
     //   "*.js": "javascriptreact"
     // }
