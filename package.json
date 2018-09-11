@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "npm i packages/*",
-    "test": "npx jest",
+    "postinstall": "npx npm-recursive-install --skip-root --rootDir=packages",
+    "test": "jest",
     "watch-client": "cd packages/client; npm run watch"
   },
   "repository": {
@@ -19,13 +19,8 @@
   },
   "homepage": "https://github.com/Progressbar/web2#readme",
   "devDependencies": {
-    "jest": "~23.6.0",
-    "prettier": "1.14.2"
-  },
-  "dependencies": {
-    "client": "file:packages/client",
-    "common": "file:packages/common",
-    "rpi": "file:packages/rpi",
-    "serverless": "file:packages/serverless"
+    "jest": "^23.6.0",
+    "prettier": "1.14.2",
+    "recursive-install": "^1.4.0"
   }
 }

@@ -3,26 +3,27 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "npx pwa export --routes /about,/blog,/",
-    "start": "npx sirv build -s",
-    "watch": "npx pwa watch",
-    "lint": "npx eslint --ext .js src/",
-    "test": "npx jest"
+    "build": "pwa export --routes /about,/blog,/",
+    "start": "sirv build -s",
+    "watch": "pwa watch --help",
+    "lint": "eslint --ext .js src/",
+    "test": "jest"
   },
   "dependencies": {
     "ganalytics": "^3.0.0",
-    "react": "~16.5.0",
-    "react-dom": "~16.5.0",
-    "react-loadable": "~5.5.0",
-    "react-router-dom": "~4.3.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^4.3.1",
     "react-waterfall": "^4.0.0",
-    "sirv-cli": "~0.2.1"
+    "sirv-cli": "^0.2.1"
   },
   "devDependencies": {
-    "@pwa/cli": "~0.3.0",
-    "@pwa/plugin-sw-workbox": "~0.3.0",
-    "@pwa/preset-react": "~0.1.0",
-    "node-sass": "~4.9.3",
-    "sass-loader": "~7.1.0"
+    "@pwa/cli": "^0.3.1",
+    "@pwa/plugin-sw-workbox": "^0.3.0",
+    "@pwa/preset-react": "^0.1.0",
+    "node-sass": "^4.9.3",
+    "recursive-install": "^1.4.0",
+    "sass-loader": "^7.1.0"
   }
 }
