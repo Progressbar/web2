@@ -1,5 +1,3 @@
-package.json
-package-lock.json
-.gitignore
-.prettierignore
-yarn.lock
+*ignore
+*.lock
+*.json

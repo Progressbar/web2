@@ -6,7 +6,9 @@
     "build": "pwa export --routes /about,/blog,/",
     "start": "sirv build -s",
     "watch": "pwa watch",
-    "lint": "eslint --ext .js src/"
+    "lint": "npx eslint --ext .js src/",
+    "flow": "npx flow",
+    "flow-watch": "npx flow-watch"
   },
   "dependencies": {
     "ganalytics": "^3.0.0",
