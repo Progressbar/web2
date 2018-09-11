@@ -1,8 +1,6 @@
 {
-  "name": "web2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/Progressbar/web2.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "https://github.com/olso",
+  "contributors": [],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Progressbar/web2/issues"
   },
@@ -20,7 +18,7 @@
   "devDependencies": {
     "eslint": "~5.5.0",
     "eslint-plugin-prettier": "~2.6.2",
-    "lerna": "^3.3.0",
+    "lerna": "~3.3.0",
     "prettier": "~1.14.2"
   }
 }
