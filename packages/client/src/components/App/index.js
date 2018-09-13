@@ -1,20 +1,19 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 import { HMR } from '@pwa/preset-react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Redirect, Switch } from 'react-router-dom';
+import { Provider } from 'unstated';
+
 import Footer from '@components/Footer';
 import Hero from '@components/Hero';
+import { IsAuthenticated } from '@components/Auth';
 import style from './index.sass';
-import { userStore } from '@stores/User';
 
 // Route-Split Components
 const loading = () => <div>Loading...</div>;
 const load = loader => Loadable({ loader, loading });
 
 const Home = load(() => import('@pages/Home'));
-const About = load(() => import('@pages/About'));
-const Article = load(() => import('@pages/Article'));
-const Blog = load(() => import('@pages/Blog'));
 const Login = load(() => import('@pages/Login'));
 const Donate = load(() => import('@pages/Donate'));
 const Events = load(() => import('@pages/Events'));
@@ -38,26 +37,36 @@ class App extends React.Component {
   render() {
     return (
       <div className={style.app}>
-        <UserContext.Provider value={{}}>
+        <Provider>
           <Hero />
           <main className={style.wrapper}>
-            <Route path="/" exact component={Home} />
-            <Route path="/blog" exact component={Blog} />
-            <Route path="/blog/:title" component={Article} />
-            <Route path="/about" exact component={About} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/register" exact component={Register} />
-            <Route path="/order" exact component={Order} />
-            <Route path="/presskit" exact component={Presskit} />
-            <Route path="/purchase" exact component={Purchase} />
-            <Route path="/me" exact component={Me} />
-            <Route path="/events" exact component={Events} />
-            <Route path="/donate" exact component={Donate} />
-            <Route path="/cowork" exact component={Cowork} />
-            <Route path="/contact" exact component={Contact} />
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/presskit" component={Presskit} />
+              <Route path="/events" component={Events} />
+              <Route path="/donate" component={Donate} />
+              <Route path="/cowork" component={Cowork} />
+              <Route path="/contact" component={Contact} />
+              <IsAuthenticated
+                NotAllowed={
+                  <Redirect
+                    to={{ pathname: '/login', state: { referrer: window.location.href } }}
+                  />
+                }
+                Allowed={
+                  <Switch>
+                    <Route path="/purchase" component={Purchase} />
+                    <Route path="/me" component={Me} />
+                    <Route path="/order" component={Order} />
+                  </Switch>
+                }
+              />
+              <Route exact path="/" component={Home} />
+            </Switch>
           </main>
           <Footer />
-        </UserContext.Provider>
+        </Provider>
       </div>
     );
   }

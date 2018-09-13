@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "npx npm-recursive-install --skip-root --rootDir=packages",
+    "postinstall": "npm run setup",
+    "setup": "npx npm-recursive-install --skip-root --rootDir=packages",
     "test": "jest",
     "watch-client": "cd packages/client; npm run watch"
   },

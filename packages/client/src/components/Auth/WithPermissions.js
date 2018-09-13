@@ -1,11 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { Subscribe } from 'unstated';
 
 import UserStore from '@stores/User';
 
 function isAllowed(props) {
   const { permissions, user, authenticated } = props;
   const { type } = user;
+
+  console.log('isAllowed props', props);
 
   return (
     permissions.length === 0 ||
@@ -43,7 +46,7 @@ function AuthState(props) {
 export function withPermissions(permissions, allowedElement, notAllowedElement) {
   function render() {
     return (
-      <UserStore.Consumer>
+      <Subscribe to={[UserStore]}>
         {user => (
           <AuthState
             permissions={permissions}
@@ -51,7 +54,7 @@ export function withPermissions(permissions, allowedElement, notAllowedElement) 
             render={allowed => (allowed ? allowedElement : notAllowedElement)}
           />
         )}
-      </UserStore.Consumer>
+      </Subscribe>
     );
   }
 

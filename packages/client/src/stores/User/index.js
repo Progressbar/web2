@@ -1,11 +1,10 @@
-import { initStore } from 'react-waterfall';
-
-const store = {
-  initialState: {
+import { Container } from 'unstated';
+export default class UserStore extends Container {
+  state = {
     id: null,
     name: null,
-  },
-  actions: {},
-};
-
-export default initStore(store);
+  };
+  isAuthenticated = () => {
+    return false;
+  };
+}
