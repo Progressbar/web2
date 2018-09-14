@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/Progressbar/web2#readme",
   "devDependencies": {
-    "jest": "^23.6.0",
     "prettier": "1.14.2",
     "recursive-install": "^1.4.0"
-  }
+  },
+  "dependencies": {}
 }
