@@ -2,16 +2,17 @@ import { init } from '@rematch/core';
 import { getPersistor } from '@rematch/persist';
 import createLoadingPlugin from '@rematch/loading';
 import createRematchPersist from '@rematch/persist';
-import selectorsPlugin from '@rematch/select';
+import selectPlugin, { getSelect } from '@rematch/select';
 
-import { model as session } from '../models/session';
+import * as models from '../models'
+
+export { models }
+export type models = typeof models
 
 export const store = init({
-  models: {
-    session,
-  },
+  models,
   plugins: [
-    selectorsPlugin(),
+    selectPlugin(),
     createLoadingPlugin(),
     createRematchPersist({
       whiteList: ['session'],
@@ -21,5 +22,7 @@ export const store = init({
 });
 
 export const persistor = getPersistor();
+
+export const select = getSelect<models>()
 
 export const { getState, dispatch } = store;

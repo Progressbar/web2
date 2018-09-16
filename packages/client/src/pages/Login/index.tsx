@@ -1,13 +1,9 @@
-import React from 'react';
-import { HMR } from '@pwa/preset-react';
-import style from './index.sass';
+import * as React from 'react'
 
-function Login() {
+export function Login() {
   return (
-    <div className={style.login}>
+    <div>
       <div>Login</div>
     </div>
-  );
+  )
 }
-
-export default HMR(Login, module);

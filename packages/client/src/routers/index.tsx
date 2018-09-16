@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 // Import routers
-import { AppRouter } from './AppRouter.tsx'
+import { AppRouter } from './AppRouter'
 // import { AdminRouter } from './AdminRouter.tsx'
 
 export function MainRouter() {

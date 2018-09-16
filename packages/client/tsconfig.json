@@ -26,6 +26,7 @@
       "pretty": true
   },
   "include": [
-      "src/*"
+      "src/**/*",
+      "../common/*.ts"
   ]
 }

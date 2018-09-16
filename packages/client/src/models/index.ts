@@ -1,5 +1,7 @@
-// import type { State as SessionState } from './session';
+import { session, State as SessionState, Model as SessionModel } from './session'
 
-// export type RootState = {
-//   session: SessionState,
-// };
+export {
+  session,
+  SessionState,
+  SessionModel
+}
