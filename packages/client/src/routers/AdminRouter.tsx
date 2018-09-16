@@ -1,16 +1,17 @@
 import * as React from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { RematchRootState } from '@rematch/core'
 
-import { select } from '../store'
+import { select, models } from '../store'
 import { AppLayout } from '../layouts/AppLayout'
 import { IsAuthenticated, HasRole } from '../components/Auth'
 
-const mapState = state => ({
+const mapState = (state: RematchRootState<models>) => ({
   user: select.session.user(state),
 })
 
-export const AppRouter = connect(mapState)(function AppRouter(props) {
+export const AdminRouter = connect(mapState)(function AppRouter() {
   return (
     <AppLayout>
       <Switch>

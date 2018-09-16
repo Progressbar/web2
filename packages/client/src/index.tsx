@@ -2,8 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 // import GAnalytics from 'ganalytics';
 import { BrowserRouter } from 'react-router-dom'
-import App from './components/App'
-// import './index.sass';
+import { App } from './components/App'
 
 ReactDOM.render(
   <BrowserRouter>

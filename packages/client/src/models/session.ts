@@ -10,14 +10,14 @@ export type State = {
 export type Model = {
   state: State,
   reducers: {
-    reset(State): State,
-    setIsAuthenticated(State, boolean): State,
-    setUser(State, TUser): State
+    reset(state: State): State,
+    setIsAuthenticated(state: State, payload: boolean): State,
+    setUser(state: State, payload: IUser): State
   },
   effects: {},
   selectors: {
-    isAuthenticated(State): boolean,
-    user(State): IUser | null
+    isAuthenticated(state: State): boolean,
+    user(state: State): IUser | null
   }
 }
 
