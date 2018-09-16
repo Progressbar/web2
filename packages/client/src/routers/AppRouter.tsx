@@ -1,13 +1,10 @@
 import * as React from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { select } from '@rematch/select'
+
 import { select } from '../store'
-
 import { AppLayout } from '../layouts/AppLayout'
-
 import { IsAuthenticated } from '../components/Auth'
-
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { Register } from '../pages/Register'

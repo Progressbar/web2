@@ -17,7 +17,7 @@ export type Model = {
   effects: {},
   selectors: {
     isAuthenticated(State): boolean,
-    user(State): TUser | null
+    user(State): IUser | null
   }
 }
 
