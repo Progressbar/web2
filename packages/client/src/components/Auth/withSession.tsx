@@ -8,14 +8,14 @@ import { select, models } from '../../store'
 function isAllowed(props: AuthStateProps) {
   const { user, isAuthenticated } = props
 
-  return user && isAuthenticated
+  return user !== null && isAuthenticated === true
 }
 
 interface AuthStateProps extends Partial<ReturnType<typeof mapState>> {
-  render(boolean): JSX.Element
+  render(result: boolean): JSX.Element
 }
 
-const mapState = (state: RematchRootState<models>) => ({
+const mapState = (state: RematchRootState<models>, ownProps: AuthStateProps) => ({
   isAuthenticated: select.session.isAuthenticated(state),
   user: select.session.user(state),
 })

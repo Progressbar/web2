@@ -1,32 +1,27 @@
 {
   "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "jsx": "react",
-      "lib": [
-          "dom",
-          "es7"
-      ],
-
-      "rootDir": "src",
-
-      "strictFunctionTypes": true,
-      "strictNullChecks": true,
-
-      "noImplicitAny": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noFallthroughCasesInSwitch": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-
-      "downlevelIteration": true,
-
-      "pretty": true
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es7"
+    ],
+    "rootDir": "src",
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "downlevelIteration": true,
+    "pretty": true
   },
   "include": [
-      "src/**/*",
-      "../common/*.ts"
+    "src/**/*",
+    "../common/*.ts"
   ]
 }

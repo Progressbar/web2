@@ -20,12 +20,12 @@ function isAllowed(props: AuthStateProps) {
   return roles.includes(user.role)
 }
 
-const mapState = (state: RematchRootState<models>) => ({
+const mapState = (state: RematchRootState<models>, ownProps: AuthStateProps) => ({
   user: select.session.user(state),
 })
 
 interface AuthStateProps extends Partial<ReturnType<typeof mapState>> {
-  render(boolean): JSX.Element
+  render(result: boolean): JSX.Element
   roles: TUserRole[]
 }
 
