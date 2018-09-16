@@ -1,2 +1,2 @@
-export { IsAuthenticated } from './IsAuthenticated';
-export { withPermissions } from './withPermissions';
+export { IsAuthenticated } from './IsAuthenticated'
+export { HasRole } from './HasRole'

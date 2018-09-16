@@ -1,7 +1,12 @@
-import React from 'react';
+// import React from 'react';
 
-import { withPermissions } from './withPermissions';
+import { withSession } from './withSession';
 
-export function IsAuthenticated(props) {
-  return withPermissions([{ scope: 'authenticated' }], props.Allowed, props.NotAllowed);
+export interface Props {
+  Allowed: JSX.Element
+  NotAllowed: JSX.Element
+}
+
+export function IsAuthenticated(props: Props) {
+  return withSession(props.Allowed, props.NotAllowed);
 }

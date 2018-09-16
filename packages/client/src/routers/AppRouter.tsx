@@ -1,13 +1,11 @@
 import * as React from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { select } from '@rematch/select'
-import { select } from '../store'
+import { RematchRootState } from '@rematch/core'
 
+import { select, models } from '../store'
 import { AppLayout } from '../layouts/AppLayout'
-
 import { IsAuthenticated } from '../components/Auth'
-
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { Register } from '../pages/Register'
@@ -21,11 +19,11 @@ import { Purchase } from '../pages/Purchase'
 import { Me } from '../pages/Me'
 import { Order } from '../pages/Order'
 
-const mapState = state => ({
+const mapState = (state: RematchRootState<models>) => ({
   user: select.session.user(state),
 })
 
-export const AppRouter = connect(mapState)(function AppRouter(props) {
+export const AppRouter = connect(mapState)(function AppRouter() {
   return (
     <AppLayout>
       <Switch>
