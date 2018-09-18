@@ -6,7 +6,7 @@
     "postinstall": "npm run setup",
     "setup": "npx npm-recursive-install --skip-root --rootDir=packages",
     "test": "jest",
-    "watch-client": "cd packages/client; npm run watch"
+    "start-client": "cd packages/client; npm run start"
   },
   "repository": {
     "type": "git",

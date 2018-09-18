@@ -12,22 +12,27 @@
     "test": "jest"
   },
   "dependencies": {
+    "@blueprintjs/core": "^3.6.1",
     "@rematch/core": "^1.0.0-beta.5",
     "@rematch/loading": "^1.1.0",
     "@rematch/persist": "^1.0.2",
     "@rematch/select": "^1.0.2",
     "emotion": "^9.2.8",
+    "formik": "^1.3.0",
     "ganalytics": "^3.0.0",
+    "normalize.css": "^8.0.0",
     "react": "^16.5.0",
     "react-app-rewire-emotion": "^4.0.0",
     "react-app-rewire-typescript": "^2.0.2",
     "react-app-rewired": "^1.6.2",
     "react-dom": "^16.5.0",
     "react-emotion": "^9.2.8",
+    "react-flexbox-grid": "^2.1.2",
     "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.5"
+    "react-scripts": "^1.1.5",
+    "redux-persist": "^5.10.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
@@ -38,6 +43,7 @@
     "@types/webpack-env": "^1.13.6",
     "babel-core": "^6.26.3",
     "babel-plugin-emotion": "^9.2.4",
+    "babel-plugin-import": "^1.9.1",
     "babel-runtime": "^6.26.0",
     "jest-cli": "^23.6.0",
     "ts-jest": "^23.1.4",

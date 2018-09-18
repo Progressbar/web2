@@ -1,7 +1,5 @@
-import { session, State as SessionState, Model as SessionModel } from './session'
+import { session } from './session'
 
 export {
-  session,
-  SessionState,
-  SessionModel
+  session
 }

@@ -11,6 +11,7 @@
     "rootDir": "src",
     "strictFunctionTypes": true,
     "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -23,5 +24,10 @@
   "include": [
     "src/**/*",
     "../common/*.ts"
+  ],
+  "exclude": [
+    "build",
+    "public",
+    "node_modules"
   ]
 }

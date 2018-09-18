@@ -2,23 +2,9 @@ import { createModel } from '@rematch/core'
 
 import { IUser } from '../../../common/types/User'
 
-export type State = {
-  isAuthenticated: boolean,
-  user: IUser | null,
-}
-
-export type Model = {
-  state: State,
-  reducers: {
-    reset(state: State): State,
-    setIsAuthenticated(state: State, payload: boolean): State,
-    setUser(state: State, payload: IUser): State
-  },
-  effects: {},
-  selectors: {
-    isAuthenticated(state: State): boolean,
-    user(state: State): IUser | null
-  }
+interface State {
+  isAuthenticated: boolean
+  user: IUser | null
 }
 
 const INITIAL_STATE: State = {
@@ -26,20 +12,23 @@ const INITIAL_STATE: State = {
   user: null,
 };
 
-export const session: Model = createModel({
+const model = {
   state: INITIAL_STATE,
   reducers: {
     reset: () => INITIAL_STATE,
-    setIsAuthenticated(state, payload) {
+    setIsAuthenticated(state: State, payload: boolean | any) {
       return { ...state, isAuthenticated: payload };
     },
-    setUser(state, payload) {
+    setUser(state: State, payload: IUser | null | any) {
       return { ...state, user: payload };
     },
   },
-  effects: {},
   selectors: {
-    isAuthenticated: state => state.isAuthenticated,
-    user: state => state.user,
+    isAuthenticated: (state: State) => state.isAuthenticated,
+    user: (state: State) => state.user,
   },
-});
+}
+
+
+
+export const session = createModel(model);
