@@ -1,1 +1,1 @@
-export { store, persistor, dispatch, getState, select, models } from './store'
+export { store, persistor, dispatch, getState, select, models } from "./store"
