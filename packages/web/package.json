@@ -1,14 +1,23 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "progressbar",
+  "description": "Progressbar",
+  "private": true,
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Martin Olsansky <olsansky.martin@gmail.com>",
   "dependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-redux": "^6.0.9",
+    "@reach/router": "^1.1.1",
     "@rematch/core": "^0.6.0",
     "@rematch/loading": "^1.1.0",
     "@rematch/persist": "^1.1.0",
     "@rematch/select": "^2.0.0",
+    "@types/react-helmet": "^5.0.7",
+    "@types/typography": "^0.16.0",
     "gatsby": "^2.0.0",
+    "gatsby-plugin-create-client-paths": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
@@ -20,11 +29,9 @@
     "react-redux": "^5.0.7",
     "react-typography": "^0.16.13",
     "redux-persist": "^5.10.0",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "typography-theme-bootstrap": "^0.16.7"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -35,10 +42,6 @@
     "lint": "tslint --project ."
   },
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
-    "@types/react-redux": "^6.0.9",
     "gatsby-cli": "^2.4.1",
     "prettier": "^1.14.2",
     "tslint": "^5.11.0",
@@ -48,6 +51,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Progressbar/web2"
   }
 }

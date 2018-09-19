@@ -11,6 +11,12 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: {
+        prefixes: [`/app/*`]
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
