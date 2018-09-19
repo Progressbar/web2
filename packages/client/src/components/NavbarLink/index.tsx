@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from '@blueprintjs/core'
 import { withRouter, RouteComponentProps } from 'react-router'
 
@@ -9,13 +8,13 @@ export interface Props extends RouteComponentProps {
 }
 
 export function Renderer(props: Props) {
-  const selected = props.location.pathname === props.to
+  const { location, to, history, title } = props
+  const selected = location.pathname === to
+
   return (
-    <Link to={props.to}>
-      <Button minimal active={selected}>
-        {props.title}
-      </Button>
-    </Link>
+    <Button minimal active={selected} onClick={() => history.push(to)}>
+      {title}
+    </Button>
   )
 }
 

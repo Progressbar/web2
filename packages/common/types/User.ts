@@ -25,7 +25,7 @@ export interface IPayment {
   referenceRaw: string
   createdAt: number
   creditsAdded: number
-  note?: string | null
+  note: string | null
   rawAmount: number
   rawCurrency: string
   verified: boolean // If verified, don't add credits again if subsequent checks
@@ -61,6 +61,7 @@ export interface IUser {
   parentId?: string | null
   name: string
   email: string
+  phone: string | null
   role: TUserRole
   credits: number
   avatar: string | null

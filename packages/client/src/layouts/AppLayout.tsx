@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import { Navbar, Alignment, NavbarDivider, ProgressBar, Text } from '@blueprintjs/core'
+import { Navbar, Alignment, NavbarDivider, ProgressBar, Text, Classes } from '@blueprintjs/core'
+import { css, cx } from 'react-emotion'
 
 import { IsAuthenticated } from '../components/Auth'
 import { NavbarLink } from '../components/NavbarLink'
@@ -17,7 +18,6 @@ class Renderer extends React.Component<any> {
 
   renderInfoButtons = () => (
     <React.Fragment>
-      {/* <NavbarLink to="/presskit" title="📰 Presskit" /> */}
       <NavbarLink to="/contact" title="🛰 Contact" />
       <NavbarLink to="/about" title="🤔 About" />
     </React.Fragment>
@@ -62,6 +62,8 @@ class Renderer extends React.Component<any> {
           <Text>info@progressbar.sk</Text>
         </Col>
         <Col xs={4}>
+          <a href="">Rent meeting room</a>
+          <a href="">Presskit</a>
           <a href="https://www.facebook.com/progressbar/">Facebook</a>
           <a href="https://www.instagram.com/progressbar_sk/">Instagram</a>
         </Col>
@@ -72,7 +74,7 @@ class Renderer extends React.Component<any> {
   renderHeader = () => (
     <Row>
       <Col className="hidden-xs hidden-sm" xs={12}>
-        <Navbar>
+        <Navbar className={Classes.DARK}>
           <Navbar.Group align={Alignment.LEFT}>
             <Navbar.Heading>
               Progressbar
@@ -106,7 +108,7 @@ class Renderer extends React.Component<any> {
 
   render() {
     return (
-      <Grid fluid>
+      <Grid fluid className={cx(sWrapper)}>
         {this.renderHeader()}
         {this.renderContent()}
         {this.renderFooter1()}
@@ -115,5 +117,10 @@ class Renderer extends React.Component<any> {
     )
   }
 }
+
+const sWrapper = css`
+  padding-left: 0;
+  padding-right: 0;
+`
 
 export const AppLayout = Renderer
