@@ -23,3 +23,5 @@ declare module "redux-persist/es/integration/react" {
    */
   export class PersistGate extends React.PureComponent<PersistGateProps, PersistorGateState> { }
 }
+
+export declare const rhythm: (a: number) => number;
