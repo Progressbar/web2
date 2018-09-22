@@ -6,7 +6,7 @@ import Helmet from "react-helmet"
 // import Header from "./header"
 // import "./layout.css"
 
-const Layout: React.SFC = ({ children }) => (
+export const AppLayout: React.SFC = ({ children }) => (
   <div
     style={{
       margin: `0 auto`,
@@ -20,5 +20,3 @@ const Layout: React.SFC = ({ children }) => (
     {children}
   </div>
 )
-
-export default Layout

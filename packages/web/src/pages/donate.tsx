@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import { StaticLayout } from "../layouts"
 
 const DonatePage: React.SFC = () => (
-  <Layout>
+  <StaticLayout>
     <h1>Donate</h1>
-  </Layout>
+  </StaticLayout>
 )
 
 export default DonatePage

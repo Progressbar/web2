@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import { StaticLayout } from "../layouts"
 
 const EventsPage: React.SFC = () => (
-  <Layout>
+  <StaticLayout>
     <h1>Events</h1>
-  </Layout>
+  </StaticLayout>
 )
 
 export default EventsPage

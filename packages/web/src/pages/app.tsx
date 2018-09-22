@@ -1,18 +1,19 @@
 import * as React from "react"
 import { Router } from "@reach/router"
 
-import PrivateRoute from "../components/auth"
+import * as routes from "../constants/routes"
+import HomePage from "./app/HomePage"
+import AccountPage from "./app/AccountPage"
+import SigninPage from "./app/SigninPage"
+import NotFoundPage from "./app/NotFoundPage"
 
-// import Purchase from "../private-pages/purchase"
-import Me from "../private-pages/me"
-// import Order from "../private-pages/order"
-
-const AppPage: React.SFC = () => (
+const App: React.SFC = () => (
   <Router>
-    {/* <Purchase path="/purchase" component={Purchase} /> */}
-    <PrivateRoute path="/me" component={Me} />
-    {/* <Order path="/order" component={Order} /> */}
+    <HomePage path={routes.HOME} />
+    <AccountPage path={routes.ACCOUNT} />
+    <SigninPage path={routes.SIGNIN} />
+    <NotFoundPage default={true} />
   </Router>
 )
 
-export default AppPage
+export default App

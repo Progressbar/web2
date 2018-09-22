@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import { StaticLayout } from "../layouts"
 
 const GalleryPage: React.SFC = () => (
-  <Layout>
+  <StaticLayout>
     <h1>Gallery</h1>
-  </Layout>
+  </StaticLayout>
 )
 
 export default GalleryPage

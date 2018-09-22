@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import { StaticLayout } from "../layouts"
 
 const PresskitPage: React.SFC = () => (
-  <Layout>
+  <StaticLayout>
     <h1>Presskit</h1>
-  </Layout>
+  </StaticLayout>
 )
 
 export default PresskitPage
