@@ -41,12 +41,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
+    "build": "npx gatsby build",
+    "develop": "npx gatsby develop",
+    "format": "npx prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "type-check": "npx tsc --noEmit",
+    "lint": "npx tslint --project ."
   },
   "devDependencies": {
     "gatsby-cli": "^2.4.1",
