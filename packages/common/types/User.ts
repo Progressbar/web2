@@ -22,14 +22,14 @@ export type TProductCategory =
 
 export interface IPaymentData {
   uid: string
-  reference: string
-  referenceRaw: string
+  method: 'cash' | 'digital'
+  methodReference: string
   creditsAdded: number
   note: string
   rawAmount: number
   rawCurrency: string
   verified: boolean // If verified, don't add credits again if subsequent checks
-  verifiedBy: string
+  verifiedByUid: string | null
 }
 
 export interface IDiscountData {
@@ -37,12 +37,14 @@ export interface IDiscountData {
   name: string
   description: string
   type: 'percentage' | 'whole'
-  amount: 20
+  amount: number
+  enabled: boolean
   used: boolean
 }
 
 export interface IProductData {
   name: string
+  enabled: boolean
   description: string
   category: TProductCategory
   credits: number
@@ -62,10 +64,17 @@ export interface IAccessLogEntryData {
   client: 'telegram' | 'web'
 }
 
+export interface ISeat {
+  name: string
+  takenByUid: string | null
+}
+
 export interface IUserData {
-  identifier: string,
+  uid: string
+  identifier: string
   credits: number
   role: TUserRole
   parentUid: string | null
   note: string
+  verifiedByUid: string | null
 }
