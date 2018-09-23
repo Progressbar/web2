@@ -1,34 +1,42 @@
 import * as functions from "firebase-functions";
-import * as admin from "firebase-admin"
+import * as admin from "firebase-admin";
 
-import { IUserData } from "../../../../common/types/User";
+import { IUserData, IDiscountData } from "../../../../common/types/User";
 
-admin.initializeApp()
-
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+const db = admin.firestore()
 
 export const hydrateNewUser = functions.auth.user().onCreate(user => {
-  const identifier: string = user.email || user.displayName
+  const identifier: string = user.email || user.displayName;
 
   const newUserData: IUserData = {
     identifier,
-    payments: [],
-    purchases: [],
-    accessLog: [],
     credits: 0,
     note: "",
     role: "unassigned",
-    parentId: null
+    parentUid: null
   };
 
-  return admin
-    .firestore()
-    .collection("users")
-    .doc(user.uid)
-    .set(newUserData);
-})
+  const newUserDiscount: IDiscountData = {
+    uid: user.uid,
+    name: "-20 Credits",
+    description: "-20 Credits",
+    type: "whole",
+    amount: 20,
+    used: false
+  };
+
+  return Promise.all([
+    db
+      .collection("users")
+      .doc(user.uid)
+      .set(newUserData),
+    db.collection("discounts").add(newUserDiscount)
+  ]);
+});
+
+// export const addDiscount = functions.https.onCall((data, context) => {
+//   const { discount }: { discount: IDiscountData} = data;
+//   console.log("context", context)
+//   return true
+// })

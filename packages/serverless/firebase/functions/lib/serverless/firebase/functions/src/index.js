@@ -10,19 +10,34 @@ admin.initializeApp();
 //  response.send("Hello from Firebase!");
 // });
 exports.hydrateNewUser = functions.auth.user().onCreate(user => {
+    const identifier = user.email || user.displayName;
     const newUserData = {
-        payments: [],
-        purchases: [],
-        accessLog: [],
+        identifier,
         credits: 0,
         note: "",
         role: "unassigned",
-        parentId: null
+        parentUid: null
     };
-    return admin
-        .firestore()
-        .collection("users")
-        .doc(user.uid)
-        .set(newUserData);
+    const newUserDiscount = {
+        uid: user.uid,
+        name: "-20 Credits",
+        description: "-20 Credits",
+        type: "whole",
+        amount: 20,
+        used: false
+    };
+    const db = admin.firestore();
+    return Promise.all([
+        db
+            .collection("users")
+            .doc(user.uid)
+            .set(newUserData),
+        db.collection("discounts").add(newUserDiscount)
+    ]);
+});
+exports.addDiscount = functions.https.onCall((data, context) => {
+    const { discount } = data;
+    console.log("context", context);
+    return true;
 });
 //# sourceMappingURL=index.js.map

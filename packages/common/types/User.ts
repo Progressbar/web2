@@ -20,25 +20,32 @@ export type TProductCategory =
   | 'lab'
   | 'diylab'
 
-export interface IPayment {
-  id: string
+export interface IPaymentData {
+  uid: string
   reference: string
   referenceRaw: string
-  createdAt: number
   creditsAdded: number
-  note: string | null
+  note: string
   rawAmount: number
   rawCurrency: string
   verified: boolean // If verified, don't add credits again if subsequent checks
   verifiedBy: string
 }
 
-export interface IProduct {
-  id: string
+export interface IDiscountData {
+  uid: string
   name: string
-  description: string | null
-  credits: number
+  description: string
+  type: 'percentage' | 'whole'
+  amount: 20
+  used: boolean
+}
+
+export interface IProductData {
+  name: string
+  description: string
   category: TProductCategory
+  credits: number
   priority: number
 }
 
@@ -48,22 +55,17 @@ export interface IPurchase {
   startTime: number
   endTime: number
   productId: string
-  stringifiedProduct: string
 }
 
-export interface IAccessLogEntry {
-  createdAt: number
-  client: string
-  token: string
+export interface IAccessLogEntryData {
+  uid: string
+  client: 'telegram' | 'web'
 }
 
 export interface IUserData {
   identifier: string,
-  payments: IPayment[]
-  purchases: IPurchase[]
-  accessLog: IAccessLogEntry[]
   credits: number
   role: TUserRole
-  parentId?: string | null
-  note?: string | null
+  parentUid: string | null
+  note: string
 }
