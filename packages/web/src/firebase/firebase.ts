@@ -14,7 +14,7 @@ const config = {
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
 }
 
-if (firebase.apps.length === 0) {
+if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }
 
@@ -32,4 +32,4 @@ if (typeof window !== "undefined") {
   })
 }
 
-export { db, auth, firebase }
+export { db, auth }

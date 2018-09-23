@@ -1,4 +1,5 @@
-import { auth, firebase } from "./firebase"
+import firebase from "firebase/app"
+import { auth } from "./firebase"
 
 export const doCreateUserWithEmailAndPassword = (email: string, password: string) =>
   auth.createUserWithEmailAndPassword(email, password)
@@ -15,5 +16,3 @@ export const doSignInWithGoogle = async () => {
 export const doSignout = () => auth.signOut()
 
 export const doPasswordReset = (email: string) => auth.sendPasswordResetEmail(email)
-
-// export const doPasswordUpdate = (password: string) => auth.currentUser.updatePassword(password)
