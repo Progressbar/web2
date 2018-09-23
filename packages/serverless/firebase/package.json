@@ -2,7 +2,9 @@
     "name": "serverless",
     "private": true,
     "version": "1.0.0",
-    "scripts": {},
+    "scripts": {
+      "deploy": "firebase deploy"
+    },
     "dependencies": {
       "firebase-tools": "^4.2.1"
     },

@@ -7,6 +7,7 @@ export type TUserRole =
   | 'coworker'
   | 'company'
   | 'partner'
+  | 'unassigned'
 
 export type TProductCategory =
   | 'satoshiMeetingRoom'
@@ -56,19 +57,12 @@ export interface IAccessLogEntry {
   token: string
 }
 
-export interface IUser {
-  id: string
-  parentId?: string | null
-  name: string
-  email: string
-  phone: string | null
-  role: TUserRole
-  credits: number
-  avatar: string | null
-  createdAt: number
-  updatedAt: number | null
-  verifiedAt: number | null
+export interface IUserData {
   payments: IPayment[]
   purchases: IPurchase[]
   accessLog: IAccessLogEntry[]
+  credits: number
+  role: TUserRole
+  parentId?: string | null
+  note?: string | null
 }

@@ -4,6 +4,8 @@ import firebase from "firebase/app"
 import "firebase/auth"
 // tslint:disable-next-line:no-submodule-imports
 import "firebase/firestore"
+// tslint:disable-next-line:no-submodule-imports
+import "firebase/functions"
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -20,6 +22,7 @@ if (!firebase.apps.length) {
 
 let db: firebase.firestore.Firestore
 let auth: firebase.auth.Auth
+let functions: firebase.functions.Functions
 
 // Gatsby build will fail otherwise
 if (typeof window !== "undefined") {
@@ -30,6 +33,8 @@ if (typeof window !== "undefined") {
   db.settings({
     timestampsInSnapshots: true,
   })
+
+  functions = firebase.functions()
 }
 
-export { db, auth }
+export { db, auth, functions, firebase }

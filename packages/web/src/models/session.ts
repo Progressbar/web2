@@ -1,7 +1,7 @@
 import { createModel } from "@rematch/core"
 
 import { IUser } from "../../../common/types/User"
-import { auth } from "../firebase"
+import { auth, db } from "../firebase"
 
 interface State {
   user: IUser | null
@@ -20,7 +20,11 @@ export const model = createModel({
     },
   },
   effects: dispatch => ({
-    async signupWithEmailAndPassword({ email, password }: { email: string; password: string }) {
+    async signinWithEmailAndPassword(email: string, password: string) {
+      const user = await auth.doSignInWithEmailAndPassword(email, password)
+      console.log("user", user)
+    },
+    async signupWithEmailAndPassword(email: string, password: string) {
       const user = await auth.doCreateUserWithEmailAndPassword(email, password)
       console.log("new user", user)
     },
