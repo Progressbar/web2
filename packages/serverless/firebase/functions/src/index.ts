@@ -3,7 +3,9 @@ import * as admin from "firebase-admin";
 
 import { IUserData } from "../../../../common/types/User";
 
-exports.hydrateNewUser = functions.auth.user().onCreate(async user => {
+admin.initializeApp()
+
+exports.hydrateNewUser = functions.auth.user().onCreate(user => {
   const newUserData: IUserData = {
     payments: [],
     purchases: [],
@@ -22,5 +24,5 @@ exports.hydrateNewUser = functions.auth.user().onCreate(async user => {
 });
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send("Hello from Firebase!");
+  response.send("Hello from Progressbar!");
 });
