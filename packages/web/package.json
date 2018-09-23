@@ -4,9 +4,6 @@
   "private": true,
   "version": "1.0.0",
   "author": "Martin Olsansky <olsansky.martin@gmail.com>",
-  "engines": {
-    "node": ">=10.6"
-  },
   "dependencies": {
     "@blueprintjs/core": "^3.6.1",
     "@hackclub/design-system": "^0.0.1-13",
