@@ -6,6 +6,5 @@
 
 // You can delete this file if you're not using it
 
-import "whatwg-fetch"
 import wrapWithProvider from "./wrap-with-provider"
 export const wrapRootElement = wrapWithProvider
