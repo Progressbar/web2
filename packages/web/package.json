@@ -20,6 +20,7 @@
     "@types/react-intl": "^2.3.11",
     "@types/react-redux": "^6.0.9",
     "@types/typography": "^0.16.0",
+    "cross-fetch": "^2.2.2",
     "firebase": "^5.5.1",
     "gatsby": "^2.0.0",
     "gatsby-cli": "^2.4.1",
