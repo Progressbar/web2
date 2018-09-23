@@ -58,6 +58,7 @@ export interface IAccessLogEntry {
 }
 
 export interface IUserData {
+  identifier: string,
   payments: IPayment[]
   purchases: IPurchase[]
   accessLog: IAccessLogEntry[]

@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "../common/*.ts"],
+  "include": ["./src/**/*", "../common/**/*.ts"],
   "exclude": [".cache", ".vscode", "build", "public", "node_modules"],
   "compilerOptions": {
     "target": "esnext",
