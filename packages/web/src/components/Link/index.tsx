@@ -1,2 +1,2 @@
-export { Link } from "@reach/router"
-// export { Link } from "gatsby"
+// export { Link } from "@reach/router"
+export { Link } from "gatsby"

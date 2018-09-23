@@ -3,6 +3,11 @@ import * as React from "react"
 import { rhythm } from "../utils/typography"
 import Helmet from "react-helmet"
 
+import { AppNavLink } from "../components/AppNavLink"
+import * as routes from "../constants/routes"
+import { StaticLayout } from "./StaticLayout"
+import { WithUser } from "../components/Session"
+
 // import Header from "./header"
 // import "./layout.css"
 
@@ -17,6 +22,20 @@ export const AppLayout: React.SFC = ({ children }) => (
       paddingRight: rhythm(3 / 4),
     }}
   >
-    {children}
+    <WithUser>
+      <div>
+        <h1>AppLayoutNav</h1>
+        <div>
+          <AppNavLink to={routes.APPHOME}>Home</AppNavLink>
+        </div>
+        <div>
+          <AppNavLink to={routes.SIGNIN}>Signin</AppNavLink>
+        </div>
+        <div>
+          <AppNavLink to={routes.ACCOUNT}>Account</AppNavLink>
+        </div>
+      </div>
+      <div>{children}</div>
+    </WithUser>
   </div>
 )

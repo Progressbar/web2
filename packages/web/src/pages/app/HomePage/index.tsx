@@ -10,6 +10,7 @@ export default class HomePage extends React.Component<IProps> {
     return (
       <AppLayout>
         <h1>HomePage</h1>
+        <div>Users</div>
       </AppLayout>
     )
   }

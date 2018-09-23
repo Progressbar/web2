@@ -7,13 +7,17 @@ import AccountPage from "./app/AccountPage"
 import SigninPage from "./app/SigninPage"
 import NotFoundPage from "./app/NotFoundPage"
 
-const App: React.SFC = () => (
-  <Router>
-    <HomePage path={routes.HOME} />
-    <AccountPage path={routes.ACCOUNT} />
-    <SigninPage path={routes.SIGNIN} />
-    <NotFoundPage default={true} />
-  </Router>
-)
+class AppPage extends React.Component {
+  render() {
+    return (
+      <Router>
+        <HomePage path={routes.APPHOME} />
+        <AccountPage path={routes.ACCOUNT} />
+        <SigninPage path={routes.SIGNIN} />
+        <NotFoundPage default={true} />
+      </Router>
+    )
+  }
+}
 
-export default App
+export default AppPage
