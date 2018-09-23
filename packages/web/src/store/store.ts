@@ -1,6 +1,5 @@
 import { init } from "@rematch/core"
 import createRematchPersist, { getPersistor } from "@rematch/persist"
-// import createLoadingPlugin from "@rematch/loading"
 import selectPlugin, { getSelect } from "@rematch/select"
 
 import * as models from "../models"
@@ -12,7 +11,6 @@ export const store = init({
   models,
   plugins: [
     selectPlugin(),
-    // createLoadingPlugin(),
     createRematchPersist({
       whiteList: ["session"],
       version: 1,
