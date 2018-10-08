@@ -5,6 +5,7 @@ import { RouteComponentProps } from "@reach/router"
 
 import { select, models } from "../../../store"
 import { AppLayout } from "../../../layouts"
+import { UserService } from "../../../services/UserService"
 
 export interface OwnProps {}
 
@@ -48,6 +49,13 @@ class SigninPageRenderer extends React.Component<Props, OwnProps> {
             }}
           >
             google
+          </button>
+          <button
+            onClick={() => {
+              UserService.verifyUser()
+            }}
+          >
+            test fns
           </button>
         </div>
         <div>

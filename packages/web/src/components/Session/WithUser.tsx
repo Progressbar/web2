@@ -9,8 +9,7 @@ export interface OwnProps {
   children?: React.ReactNode
 }
 
-export interface OwnState {
-}
+export interface OwnState {}
 
 interface StateProps extends Partial<ReturnType<typeof mapState>> {}
 
@@ -22,11 +21,16 @@ class WithUserRenderer extends React.Component<Props, OwnState> {
   unsubscribe: () => void | undefined
 
   componentDidMount() {
-    const { setUser, reset } = this.props
+    // const { setUser, reset } = this.props
 
     if (typeof window !== "undefined") {
-      this.unsubscribe = firebase.auth.onAuthStateChanged(user => {
-        user ? setUser(user) : reset()
+      this.unsubscribe = firebase.auth.onAuthStateChanged(async (user) => {
+        if (user) {
+          this.props.setUser(user)
+          this.props.setAccessToken(await user.getIdToken())
+        } else {
+          this.props.reset()
+        }
       })
     }
   }
@@ -38,9 +42,7 @@ class WithUserRenderer extends React.Component<Props, OwnState> {
   }
 
   render() {
-    return (
-      <React.Fragment>{this.props.children}</React.Fragment>
-    )
+    return <React.Fragment>{this.props.children}</React.Fragment>
   }
 }
 
@@ -50,7 +52,8 @@ const mapState = (state: RematchRootState<models>) => ({
 
 const mapDispatch = (dispatch: RematchDispatch<models>) => ({
   setUser: dispatch.session.setUser,
-  reset: dispatch.session.reset
+  setAccessToken: dispatch.session.setAccessToken,
+  reset: dispatch.session.reset,
 })
 
 export default connect(

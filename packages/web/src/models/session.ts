@@ -1,14 +1,18 @@
 import { createModel } from "@rematch/core"
 
-import { IUser } from "../../../common/types/User"
+// import { IUser } from "../../../common/types/User"
 import { auth, db } from "../firebase"
+
+interface IUser {}
 
 interface State {
   user: IUser | null
+  accessToken: string | null
 }
 
 const INITIAL_STATE: State = {
   user: null,
+  accessToken: null
 }
 
 export const model = createModel({
@@ -18,6 +22,9 @@ export const model = createModel({
     setUser(state: State, payload: IUser | null): State {
       return { ...state, user: payload }
     },
+    setAccessToken(state: State, payload: string | null): State {
+      return { ...state, accessToken: payload }
+    }
   },
   effects: dispatch => ({
     async signinWithEmailAndPassword(email: string, password: string) {
@@ -40,5 +47,6 @@ export const model = createModel({
   selectors: {
     isAuthenticated: (state: State): boolean => !!state.user,
     user: (state: State): IUser | null => state.user,
+    accessToken: (state: State): string | null => state.accessToken
   },
 })

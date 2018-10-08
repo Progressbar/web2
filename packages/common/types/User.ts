@@ -51,7 +51,7 @@ export interface IProductData {
   priority: number
 }
 
-export interface IPurchase {
+export interface IPurchaseData {
   id: string
   creditsRemoved: number
   startTime: number
