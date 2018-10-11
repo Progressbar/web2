@@ -1,36 +1,57 @@
+const NAME = "Progressbar"
+
 module.exports = {
   siteMetadata: {
-    title: "Progressbar",
+    title: `${NAME}`,
+    description: `${NAME}`,
+    siteUrl: "https://progressbar.sk"
   },
+  pathPrefix: "/",
   plugins: [
-    "gatsby-plugin-typescript",
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: 'src/utils/typography.js',
+        pathToConfigModule: "src/utils/typography.js",
         omitGoogleFont: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-create-client-paths',
+      resolve: "gatsby-source-filesystem",
       options: {
-        prefixes: ['/app/*'],
+        path: `${__dirname}/content/images/`,
+        name: "images",
       },
     },
-    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-create-client-paths",
       options: {
-        name: "Progressbar",
-        short_name: "Progressbar",
+        prefixes: ["/app/*"],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: `${NAME}`,
+        short_name: `${NAME}`,
+        description: `${NAME}`,
         start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",
-        display: "minimal-ui",
+        display: "standalone",
         icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-netlify",
+      options: {
+        mergeSecurityHeaders: true,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
+      },
+    },
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
-    "gatsby-plugin-netlify",
+    "gatsby-plugin-sitemap"
   ],
 }
