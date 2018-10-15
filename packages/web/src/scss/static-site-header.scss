@@ -1,0 +1,85 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background: $black;
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 64px;
+    transition: height 0.4s ease-in-out;
+  }
+
+  .site-header-logo {
+    flex-grow: 1;
+    width: auto;
+    margin: 0;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      flex-grow: 0;
+      width: 10%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 20%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 162px;
+      transition: width .4s ease-in-out;
+    }
+  }
+
+  .site-header-panel {
+    flex-grow: 1;
+
+    & > * {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include media-breakpoint-up(md) {
+      & {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .main-nav {
+      @include media-breakpoint-up(md) {
+        & {
+          display: flex;
+          align-items: center;
+          width: 94%;
+          max-width: 620px;
+        }
+      }
+
+      & > * {
+        @include media-breakpoint-up(md) {
+          & {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .site-header-login {
+  }
+}

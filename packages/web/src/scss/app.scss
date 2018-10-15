@@ -1,0 +1,63 @@
+@import "./bootstrap.scss";
+
+@import "./colors.scss";
+@import "./utils.scss";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: $white;
+  background-color: $site-body-bg;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main,
+audio,
+canvas,
+video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@import "./static-site-header.scss";
+@import "./static-site-footer.scss";

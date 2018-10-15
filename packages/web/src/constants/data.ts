@@ -4,6 +4,9 @@ export const description = `${name}`
 export const domain = `progressbar.sk`
 export const url = `https://${domain}`
 
+export const emailEvents = `events@${domain}`
+export const emailInfo = `info@${domain}`
+
 export const org = {
   "@context": "http://schema.org",
   "@type": "Organization",

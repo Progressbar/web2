@@ -1,6 +1,8 @@
 import * as React from "react"
-import "modern-normalize/modern-normalize.css"
+import "modern-normalize"
 
-import "../../scss/bootstrap.scss"
+import "../../scss/app.scss"
 
-export const ThemeProvider: React.SFC = ({ children }) => <div>{children}</div>
+export const ThemeProvider: React.SFC = ({ children }) => (
+  <React.Fragment>{children}</React.Fragment>
+)
