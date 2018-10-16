@@ -1,0 +1,7 @@
+.site-main {
+  min-height: 600px;
+
+  @include media-breakpoint-up(lg) {
+    min-height: 90vh;
+  }
+}

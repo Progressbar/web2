@@ -28,6 +28,11 @@
     letter-spacing: 0;
     line-height: 18px;
 
+    a {
+      font-size: inherit;
+      display: inline-block;
+    }
+
     @include media-breakpoint-up(md) {
       color: $white;
     }

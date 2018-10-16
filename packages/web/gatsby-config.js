@@ -16,13 +16,13 @@ module.exports = {
     //     omitGoogleFont: true,
     //   },
     // },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: path.join(__dirname, "content", "images"),
-        name: "images",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: path.join(__dirname, "content", "images"),
+    //     name: "images",
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-create-client-paths",
       options: {
@@ -48,6 +48,14 @@ module.exports = {
         mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svgs/,
+        },
       },
     },
     "gatsby-plugin-typescript",
