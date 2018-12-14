@@ -50,14 +50,14 @@ module.exports = {
         mergeCachingHeaders: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /svgs/,
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /svgs/,
+    //     },
+    //   },
+    // },
     "gatsby-plugin-typescript",
     // "gatsby-plugin-catch-links",
     // "gatsby-transformer-sharp",

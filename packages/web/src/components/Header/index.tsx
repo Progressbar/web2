@@ -6,8 +6,9 @@ import * as routes from "../../constants/routes"
 import { Link } from "../Link"
 import { ExternalLink } from "../ExternalLink"
 // import { Img } from "../Img"
+import { Button } from "../Button"
 
-import ProgressbarLogoLong from "../../../content/svgs/progressbar-logo-refresh.svg"
+// import ProgressbarLogoLong from "../../../content/svgs/progressbar-logo-refresh.svg"
 
 interface IProps {}
 
@@ -17,7 +18,7 @@ export const Header: React.SFC<IProps> = () => (
       <div className={cx("site-header__inner", "container-wide")}>
         <div className={cx("site-header-logo")}>
           <Link to={routes.LANDING} className={cx("text-white")}>
-            <ProgressbarLogoLong />
+            {/* <ProgressbarLogoLong /> */}
           </Link>
         </div>
         <nav className={cx("site-header-panel")} role="navigation">
@@ -48,9 +49,7 @@ export const Header: React.SFC<IProps> = () => (
           </div>
         </nav>
         <div className={cx("site-header-login")}>
-          <Link to={routes.SIGNIN} className={cx("button")}>
-            Login
-          </Link>
+          <Button>Login</Button>
         </div>
       </div>
     </header>
